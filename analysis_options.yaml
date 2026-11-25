@@ -1,0 +1,81 @@
+# ==============================================================================
+# 企业级 Dart / Flutter 静态代码分析配置
+# 执行 `flutter analyze` 检查全项目代码质量，CI/CD 流水线应将此检查作为门禁
+# ==============================================================================
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  # 严格类型检查：在编译前消灭隐式 dynamic 与不安全类型转换
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  # 排除自动生成的文件，避免误报
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/generated/**"
+    - "build/**"
+
+  # 将高风险静态问题提升为编译级错误（error），强制修复
+  errors:
+    missing_required_param: error
+    missing_return: error
+    invalid_annotation_target: ignore
+    todo: ignore
+
+linter:
+  rules:
+    # -------------------- 代码风格与可读性 --------------------
+    # 强制使用单引号（与 Dart 官方风格一致）
+    prefer_single_quotes: true
+    # 要求多行参数列表末尾添加逗号，便于自动格式化与 Git Diff 审阅
+    require_trailing_commas: true
+    # 强制使用大括号包裹控制流语句，防止悬空 else 等逻辑漏洞
+    curly_braces_in_flow_control_structures: true
+    # 优先使用不可变 final 局部变量，降低副作用
+    prefer_final_locals: true
+    # 优先将只读字段声明为 final
+    prefer_final_fields: true
+    # 集合内仅有一个循环/条件时优先使用 collection-if / collection-for
+    prefer_if_elements_to_conditional_expressions: true
+    # 优先使用 const 构造函数与声明，提升 Flutter Widget 渲染性能
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    # 强制显式声明函数返回类型，增强 API 可读性
+    always_declare_return_types: true
+    # 优先使用 package: 方式导入，避免冗长脆弱的相对路径导入
+    always_use_package_imports: true
+    # 排序构造函数中的子 Widget 参数放最后，保持 Flutter 树结构整洁
+    sort_child_properties_last: true
+
+    # -------------------- 健壮性与潜在缺陷预防 --------------------
+    # 禁止在生产代码中使用 print()，统一使用 AppLogger
+    avoid_print: true
+    # 禁止忽略未 await 的 Future，防止异步异常静默丢失
+    unawaited_futures: true
+    # 禁止不必要的异步包装
+    unnecessary_await_in_return: true
+    # 禁止空的 catch 语句块，异常必须被记录或明确处理
+    empty_catches: true
+    # 强制关闭 StreamSink / StreamSubscription 等资源
+    cancel_subscriptions: true
+    close_sinks: true
+    # 避免在 Widget build 中创建无意义的 Container 嵌套
+    avoid_unnecessary_containers: true
+    # 使用 SizedBox 代替仅用于占位的 Container
+    sized_box_for_whitespace: true
+    # 禁止在条件判断中使用冗余布尔字面量
+    avoid_bool_literals_in_conditional_expressions: true
+    # 禁止冗余的 null 初始化
+    avoid_init_to_null: true
+    # 推荐在自定义 StatefulWidget / StatelessWidget 中保留 super.key
+    use_super_parameters: true
+    # 使用 ColoredBox 替代仅设置颜色的 Container
+    use_colored_box: true
+    # 使用 DecoratedBox 替代仅设置装饰的 Container
+    use_decorated_box: true

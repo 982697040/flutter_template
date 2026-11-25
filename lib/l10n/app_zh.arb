@@ -1,0 +1,49 @@
+{
+  "@@locale": "zh",
+  "appTitle": "企业级 Flutter 框架",
+  "@appTitle": {
+    "description": "应用标题"
+  },
+  "homeTitle": "工作台",
+  "settingsTitle": "系统设置",
+  "welcomeTitle": "企业级 Flutter 项目模板已就绪",
+  "welcomeSubtitle": "内置 Clean Architecture 分层、Riverpod 状态管理、GoRouter 路由、Dio 网络封装、多环境配置与国际化支持。",
+  "currentEnvironment": "当前运行环境",
+  "apiBaseUrl": "接口基础地址",
+  "frameworkVersion": "框架版本",
+  "architecturePattern": "架构模式",
+  "architecturePatternValue": "Clean Architecture + Feature-First",
+  "quickActions": "快速验证",
+  "openSettings": "进入系统设置",
+  "simulateRefresh": "刷新概览数据",
+  "simulateError": "触发错误兜底演示",
+  "themeSetting": "外观主题",
+  "themeSystem": "跟随系统",
+  "themeLight": "浅色模式",
+  "themeDark": "深色模式",
+  "languageSetting": "界面语言",
+  "languageSystem": "跟随系统",
+  "languageZh": "简体中文",
+  "languageEn": "English",
+  "aboutSection": "环境与架构信息",
+  "retry": "重试",
+  "loading": "正在加载...",
+  "emptyData": "暂无数据",
+  "notFoundTitle": "页面不存在",
+  "notFoundDescription": "未找到路径：{path}",
+  "@notFoundDescription": {
+    "description": "404 页面未找到提示",
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "backToHome": "返回首页",
+  "networkError": "网络连接异常，请检查网络设置",
+  "timeoutError": "请求超时，请稍后重试",
+  "serverError": "服务器繁忙，请稍后再试",
+  "unauthorizedError": "登录状态已失效，请重新登录",
+  "unknownError": "发生未知异常，请稍后重试",
+  "refreshSuccess": "数据刷新成功"
+}

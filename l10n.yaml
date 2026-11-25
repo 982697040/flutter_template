@@ -1,0 +1,20 @@
+# Flutter 官方国际化（gen-l10n）配置文件
+# 运行 `flutter pub get` 或 `flutter gen-l10n` 时自动生成多语言代码
+
+# ARB 翻译源文件所在目录
+arb-dir: lib/l10n
+
+# 模板 ARB 文件（作为所有语言的字段基准，建议以默认语言为模板）
+template-arb-file: app_zh.arb
+
+# 生成的国际化代理 Dart 文件名
+output-localization-file: app_localizations.dart
+
+# 生成的本地化类名
+output-class: AppLocalizations
+
+# 禁止空安全下的可空 getter，保证通过 AppLocalizations.of(context) 安全调用
+nullable-getter: false
+
+# 当存在未翻译的词条时输出到指定文件，便于团队排查漏翻项
+untranslated-messages-file: l10n_untranslated.txt

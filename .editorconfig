@@ -1,0 +1,26 @@
+# ==============================================================================
+# 跨平台编辑器统一代码格式配置（Android Studio / VS Code / IntelliJ 自动识别）
+# 用于消除 Windows 与 macOS/Linux 协作时的换行符、编码与缩进差异
+# ==============================================================================
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Dart 源码（与 `dart format` 官方标准保持一致）
+[*.dart]
+max_line_length = 80
+
+# Android 原生 Kotlin / Java / Groovy / XML 保持 4 空格缩进
+[*.{kt,kts,java,gradle,xml}]
+indent_size = 4
+
+# Markdown 文件保留行尾双空格（Markdown 硬换行语法）
+[*.md]
+trim_trailing_whitespace = false

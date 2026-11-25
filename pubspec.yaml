@@ -1,0 +1,71 @@
+name: flutter_template
+description: "企业级标准开发 Flutter 空项目框架（Clean Architecture + Riverpod + GoRouter + Dio + 国际化 + 多环境配置）。"
+
+# 防止意外发布到 pub.dev，企业私有项目务必保留此配置
+publish_to: 'none'
+
+# 版本号格式：主版本号.次版本号.修订号+构建号（Build Number）
+# Android: versionName / versionCode；iOS: CFBundleShortVersionString / CFBundleVersion
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Flutter 官方多语言本地化支持（与 l10n.yaml 配合使用）
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+  # iOS 风格图标库
+  cupertino_icons: ^1.0.8
+
+  # 状态管理与依赖注入（编译安全、易测试、无 BuildContext 强耦合）
+  flutter_riverpod: ^2.5.1
+
+  # 官方声明式路由管理（支持深链、路由守卫、嵌套导航与 404 兜底）
+  go_router: ^14.2.0
+
+  # 企业级网络请求库（拦截器、超时控制、取消令牌、文件上传下载）
+  dio: ^5.5.0
+
+  # 轻量级本地键值存储（用于主题、语言、非敏感用户偏好设置）
+  shared_preferences: ^2.2.3
+
+  # 敏感数据加密存储（用于 AccessToken、RefreshToken 等凭据）
+  flutter_secure_storage: ^9.2.2
+
+  # 结构化日志工具（支持日志级别控制与格式化输出）
+  logger: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Flutter 官方推荐静态代码检查规则集
+  flutter_lints: ^4.0.0
+
+flutter:
+  # 启用 Material Icons 图标字体
+  uses-material-design: true
+
+  # 启用 Flutter 官方国际化代码自动生成（配合根目录 l10n.yaml）
+  generate: true
+
+  # 静态资源目录声明（按需取消注释或新增子目录）
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  # 自定义字体配置示例：
+  # fonts:
+  #   - family: PingFang
+  #     fonts:
+  #       - asset: assets/fonts/PingFang-Regular.ttf
+  #       - asset: assets/fonts/PingFang-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/PingFang-Bold.ttf
+  #         weight: 700
